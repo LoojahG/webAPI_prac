@@ -1,0 +1,8 @@
+@prac_webAPI_HostAddress = http://localhost:5073
+
+GET {{prac_webAPI_HostAddress}}/Student/
+Accept: application/json
+
+###
+POST {{prac_webAPI_HostAddress}}/Student/
+Accept: application/json

@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics.CodeAnalysis;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace prac_webAPI.Controllers
 {
@@ -47,10 +45,10 @@ namespace prac_webAPI.Controllers
                 new { id = student.Id }, //Fills the {id} in the route
                 student);           //Data returned in the response body
         }
-        [HttpPut]
-        public ActionResult<Student> UpdateStudent(Student std)
+        [HttpPut("{id}")]
+        public ActionResult<Student> UpdateStudent(int id,Student std)
         {
-            var student = students.FirstOrDefault(s => s.Id == std.Id);
+            var student = students.FirstOrDefault(s => s.Id == id);
             if (student == null)
             {
                 return NotFound(); // 404 if no matching student
